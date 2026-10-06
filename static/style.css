@@ -1,0 +1,78 @@
+/* ===== Tema Biru ===== */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #e8f0fe;
+    margin: 0;
+    color: #1e293b;
+}
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 0 32px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(30, 64, 175, 0.15);
+    overflow: hidden;
+}
+h1 {
+    margin: 0 -32px 24px;
+    padding: 20px 32px;
+    background: linear-gradient(90deg, #1e3a8a, #2563eb);
+    color: #ffffff;
+    font-size: 26px;
+}
+
+/* Tabel */
+table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+th, td { padding: 10px 12px; border-bottom: 1px solid #dbeafe; text-align: left; }
+th { background: #1e40af; color: #ffffff; }
+tbody tr:nth-child(even) { background: #f5f9ff; }
+tbody tr:hover { background: #eaf2ff; }
+.kosong { text-align: center; color: #64748b; }
+.detail th { width: 180px; }
+
+.aksi { display: flex; gap: 6px; align-items: center; }
+.aksi form { margin: 0; }
+
+/* Tombol */
+.btn {
+    display: inline-block;
+    padding: 7px 14px;
+    border: 1px solid #93c5fd;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1.4;
+    cursor: pointer;
+}
+.btn:hover { background: #eff6ff; }
+.btn-primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+.btn-primary:hover { background: #1d4ed8; }
+.btn-warning { background: #0ea5e9; border-color: #0ea5e9; color: #fff; }
+.btn-warning:hover { background: #0284c7; }
+.btn-danger  { background: #dc2626; border-color: #dc2626; color: #fff; }
+.btn-danger:hover { background: #b91c1c; }
+
+/* Form */
+label { display: block; margin-top: 14px; font-weight: 600; color: #1e3a8a; }
+input {
+    width: 100%;
+    padding: 9px;
+    margin-top: 4px;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px #bfdbfe; }
+small { color: #64748b; }
+.tombol { margin-top: 22px; display: flex; gap: 8px; }
+
+/* Pesan */
+.alert { padding: 10px 14px; border-radius: 6px; margin-bottom: 16px; }
+.alert ul { margin: 0; padding-left: 18px; }
+.alert.success { background: #dbeafe; color: #1e3a8a; border-left: 4px solid #2563eb; }
+.alert.error   { background: #fee2e2; color: #991b1b; border-left: 4px solid #dc2626; }
