@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ "Tambah" if mode == "tambah" else "Edit" }} Mahasiswa</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ "Tambah" if mode == "tambah" else "Edit" }} Mahasiswa</h1>
+
+        {% if errors %}
+        <div class="alert error">
+            <ul>
+                {% for e in errors %}
+                <li>{{ e }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if mode == "tambah" %}
+        <form action="/mahasiswa/tambah" method="POST">
+        {% else %}
+        <form action="/mahasiswa/{{ m.nim }}/edit" method="POST">
+        {% endif %}
+
+            <label>NIM</label>
+            {% if mode == "tambah" %}
+            <input type="text" name="nim" value="{{ m.nim or '' }}">
+            {% else %}
+            <input type="text" value="{{ m.nim }}" disabled>
+            <small>NIM tidak dapat diubah.</small>
+            {% endif %}
+
+            <label>Nama</label>
+            <input type="text" name="nama" value="{{ m.nama or '' }}">
+
+            <label>Program Studi</label>
+            <input type="text" name="program_studi" value="{{ m.program_studi or '' }}">
+
+            <label>Angkatan</label>
+            <input type="number" name="angkatan" value="{{ m.angkatan or '' }}">
+
+            <label>IPK (0.00 - 4.00)</label>
+            <input type="text" name="ipk" value="{{ m.ipk if m.ipk is not none else '' }}">
+
+            <div class="tombol">
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="/mahasiswa" class="btn">Batal</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
